@@ -3,11 +3,6 @@
             <kt-carousel></kt-carousel>
             <div class="row">
                 <kt-item></kt-item>
-                <kt-item></kt-item>
-                <kt-item></kt-item>
-                <kt-item></kt-item>
-                <kt-item></kt-item>
-                <kt-item></kt-item>
             </div>
         </div><!-- .col-lg-9 -->
 </template>
