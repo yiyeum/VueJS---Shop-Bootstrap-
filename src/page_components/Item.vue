@@ -7,13 +7,13 @@
             <div class="card-body">
 
                 <h4 class="card-title">
-                    <a href="#">{{name}}</a>
+                    <a href="#">{{singleItem.name}}</a>
                 </h4>
-                <h5><span>{{priceSign}}</span> {{price}}</h5>
-                <p class="card-text">{{description}}</p>
-                <button type="button" class="btn btn-primary" v-on:click="convertCad">Convert to {{convertPrice}}</button>
+                <h5><span>{{singleItem.priceSign}}</span> {{singleItem.price}}</h5>
+                <p class="card-text">{{singleItem.description}}</p>
+                <button type="button" class="btn btn-primary" v-on:click="convertCad">Convert to {{singleItem.convertPrice}}</button>
                 <hr />
-                <span>{{category}}</span>
+                <span>{{singleItem.category}}</span>
 
             </div>
             <div class="card-footer">
@@ -25,17 +25,7 @@
 
 <script>
     export default{
-        data:function(){
-            return{
-                name : 'Item Name',
-                price : '24.99',
-                priceSign : 'CAD',
-                convertPrice : 'USD',
-                description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!',
-                category : 'Category1',
-                CAD : true
-            }
-        },
+        props:['singleItem'],
         methods:{
             convertCad:function(){
                 if(this.CAD) {
