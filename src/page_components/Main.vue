@@ -2,7 +2,7 @@
         <div class="col-lg-9">
             <kt-carousel></kt-carousel>
             <div class="row">
-                <kt-item v-for="item in items" v-bind:single-item="item"></kt-item>
+                <kt-item v-for="item in items" v-bind:single-item="item" v-on:convert="convertCad"></kt-item>
             </div>
         </div><!-- .col-lg-9 -->
 </template>
@@ -12,6 +12,20 @@
     import Item from './Item.vue'
 
     export default{
+        methods:{
+            convertCad:function(singleItem){
+                if(singleItem.CAD) {
+                    singleItem.price = (singleItem.price * 0.9132).toFixed(2);
+                    singleItem.priceSign = "USD";
+                    singleItem.convertPrice = "CAD";
+                }else{
+                    singleItem.price = (singleItem.price / 0.9132).toFixed(2);
+                    singleItem.priceSign = "CAD";
+                    singleItem.convertPrice = "USD";
+                }
+                singleItem.CAD = !singleItem.CAD;
+            }
+        },
         data:function(){
             return{
                 items:[{

@@ -27,17 +27,8 @@
     export default{
         props:['singleItem'],
         methods:{
-            convertCad:function(){
-                if(this.CAD) {
-                    this.price = (this.price * 0.9132).toFixed(2);
-                    this.priceSign = "USD";
-                    this.convertPrice = "CAD";
-                }else{
-                    this.price = (this.price / 0.9132).toFixed(2);
-                    this.priceSign = "CAD";
-                    this.convertPrice = "USD";
-                }
-                this.CAD = !this.CAD;
+            convertCad(){
+                this.$emit('convert', this.singleItem)
             }
         }
     }
