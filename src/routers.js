@@ -8,7 +8,7 @@ import Services from './page_components/Services.vue'
 import Home from './page_components/Container.vue'
 
 
-export const routers =[
+export const routes =[
     {path: '/contact', component:Contact},
     {path: '/about', component: About},
     {path: '/service', component: Services},

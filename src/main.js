@@ -3,11 +3,11 @@ import Navigation from './page_components/Navigation.vue'
 import Container from './page_components/Container.vue'
 import Footer from './page_components/Footer.vue'
 import Router from 'vue-router'
-import {routers} from './routers'
+import {routes} from './routers'
 Vue.use(Router);
 
 const router = new Router({
-    routers
+    routes
 });
 
 new Vue({
